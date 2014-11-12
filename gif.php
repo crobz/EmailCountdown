@@ -1,7 +1,7 @@
 <?php
 
 	//Leave all this stuff as it is
-	date_default_timezone_set('Europe/London');
+	date_default_timezone_set('EST');
 	include 'GIFEncoder.class.php';
 	include 'php52-fix.php';
 	$time = $_GET['time'];
@@ -18,11 +18,11 @@
 	$delay = 100;// milliseconds
 
 	$font = array(
-		'size'=>23, // Font size, in pts usually.
+		'size'=>19, // Font size, in pts usually.
 		'angle'=>0, // Angle of the text
 		'x-offset'=>7, // The larger the number the further the distance from the left hand side, 0 to align to the left.
-		'y-offset'=>30, // The vertical alignment, trial and error between 20 and 60.
-		'file'=>'./GillSans.ttc', // Font path
+		'y-offset'=>29, // The vertical alignment, trial and error between 20 and 60.
+		'file'=>'./Futura.ttc', // Font path
 		'color'=>imagecolorallocate($image, 55, 160, 130), // RGB Colour of the text
 	);
 	for($i = 0; $i <= 60; $i++){
