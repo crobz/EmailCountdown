@@ -46,7 +46,7 @@
 			// Open the first source image and add the text.
 			$image = imagecreatefrompng('images/penguin.png');
 			;
-			$text = $interval->format(	'Days: 0%a 
+			$text = $interval->format(	'Days: %a 
 Hours: %H 
 Minutes: %I 
 Seconds: %S');
