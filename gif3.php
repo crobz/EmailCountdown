@@ -23,7 +23,7 @@
 		'x-offset'=>120, // The larger the number the further the distance from the left hand side, 0 to align to the left.
 		'y-offset'=>300, // The vertical alignment, trial and error between 20 and 60.
 		'file'=>'./Futura.ttc', // Font path
-		'color'=>imagecolorallocate($image, 55, 160, 130), // RGB Colour of the text
+		'color'=>imagecolorallocate($image, 0, 0, 0), // RGB Colour of the text
 	);
 	for($i = 0; $i <= 60; $i++){
 		
