@@ -13,17 +13,17 @@
 
 
 	// Your image link
-	$image = imagecreatefrompng('images/penguin.png');
+	$image = imagecreatefrompng('images/namik2.png');
 
 	$delay = 100;// milliseconds
 
 	$font = array(
 		'size'=>19, // Font size, in pts usually.
 		'angle'=>0, // Angle of the text
-		'x-offset'=>120, // The larger the number the further the distance from the left hand side, 0 to align to the left.
-		'y-offset'=>250, // The vertical alignment, trial and error between 20 and 60.
+		'x-offset'=>140, // The larger the number the further the distance from the left hand side, 0 to align to the left.
+		'y-offset'=>600, // The vertical alignment, trial and error between 20 and 60.
 		'file'=>'./Futura.ttc', // Font path
-		'color'=>imagecolorallocate($image, 55, 160, 130), // RGB Colour of the text
+		'color'=>imagecolorallocate($image, 255, 255, 255), // RGB Colour of the text
 	);
 	for($i = 0; $i <= 60; $i++){
 		
@@ -31,7 +31,7 @@
 		
 		if($future_date < $now){
 			// Open the first source image and add the text.
-			$image = imagecreatefrompng('images/penguin.png');
+			$image = imagecreatefrompng('images/namik2.png');
 			;
 			$text = $interval->format('00:00:00:00');
 			imagettftext ($image , $font['size'] , $font['angle'] , $font['x-offset'] , $font['y-offset'] , $font['color'] , $font['file'], $text );
@@ -44,12 +44,11 @@
 			break;
 		} else {
 			// Open the first source image and add the text.
-			$image = imagecreatefrompng('images/penguin.png');
+			$image = imagecreatefrompng('images/namik2.png');
 			;
-			$text = $interval->format(	'Days: %a 
-Hours: %H 
-Minutes: %I 
-Seconds: %S');
+			$text = $interval->format(	'Holiday Party Countdown:
+   Days  Hrs  Min  Sec
+    %a     %H   %I    %S');
 			imagettftext ($image , $font['size'] , $font['angle'] , $font['x-offset'] , $font['y-offset'] , $font['color'] , $font['file'], $text );
 			ob_start();
 			imagegif($image);
