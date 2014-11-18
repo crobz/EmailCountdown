@@ -13,19 +13,17 @@
 
 
 	// Your image link
-	$image = imagecreate(530,100);
+	$image = imagecreatefrompng('images/southpark.png');
 
 	$delay = 100;// milliseconds
 
 	$font = array(
-		'size'=>50, // Font size, in pts usually.
+		'size'=>30, // Font size, in pts usually.
 		'angle'=>0, // Angle of the text
-		'x-offset'=>8, // The larger the number the further the distance from the left hand side, 0 to align to the left.
-		'y-offset'=>70, // The vertical alignment, trial and error between 20 and 60.
+		'x-offset'=>380, // The larger the number the further the distance from the left hand side, 0 to align to the left.
+		'y-offset'=>435, // The vertical alignment, trial and error between 20 and 60.
 		'file'=>'./Futura.ttc', // Font path
-		'color'=>imagecolorallocate($image, 128, 255, 0), // RGB Colour of the text
-		$black = imagecolorallocate($image, 0, 0, 0);
-    		imagecolortransparent($image, $black);
+		'color'=>imagecolorallocate($image, 255, 255, 255), // RGB Colour of the text
 	);
 	for($i = 0; $i <= 60; $i++){
 		
@@ -33,7 +31,7 @@
 		
 		if($future_date < $now){
 			// Open the first source image and add the text.
-			$image = imagecreate(530,100);
+			$image = imagecreatefrompng('images/soutpark.png');
 			;
 			$text = $interval->format('00:00:00:00');
 			imagettftext ($image , $font['size'] , $font['angle'] , $font['x-offset'] , $font['y-offset'] , $font['color'] , $font['file'], $text );
@@ -46,11 +44,9 @@
 			break;
 		} else {
 			// Open the first source image and add the text.
-			$image = imagecreate(530,100);
-			$black = imagecolorallocate($image, 0, 0, 0);
-    		imagecolortransparent($image, $black);
+			$image = imagecreatefrompng('images/southpark.png');
 			;
-			$text = $interval->format(	'%a : %H : %I : %S');
+			$text = $interval->format(	'%a:%H:%I:%S');
 			imagettftext ($image , $font['size'] , $font['angle'] , $font['x-offset'] , $font['y-offset'] , $font['color'] , $font['file'], $text );
 			ob_start();
 			imagegif($image);
