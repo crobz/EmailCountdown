@@ -13,7 +13,7 @@
 
 
 	// Your image link
-	$image = imagecreatefrompng('images/orangeimage.png');
+	$image = imagecreatefrompng('images/black.png');
 
 	$delay = 100;// milliseconds
 
@@ -23,7 +23,7 @@
 		'x-offset'=>8, // The larger the number the further the distance from the left hand side, 0 to align to the left.
 		'y-offset'=>70, // The vertical alignment, trial and error between 20 and 60.
 		'file'=>'./Futura.ttc', // Font path
-		'color'=>imagecolorallocate($image, 128, 255, 0), // RGB Colour of the text
+		'color'=>imagecolorallocate($image, 255, 255, 255), // RGB Colour of the text
 	);
 	for($i = 0; $i <= 60; $i++){
 		
@@ -31,7 +31,7 @@
 		
 		if($future_date < $now){
 			// Open the first source image and add the text.
-			$image = imagecreatefrompng('images/orangeimage.png');
+			$image = imagecreatefrompng('images/blck.png');
 			;
 			$text = $interval->format('00:00:00:00');
 			imagettftext ($image , $font['size'] , $font['angle'] , $font['x-offset'] , $font['y-offset'] , $font['color'] , $font['file'], $text );
@@ -44,7 +44,7 @@
 			break;
 		} else {
 			// Open the first source image and add the text.
-			$image = imagecreatefrompng('images/orangeimage.png');
+			$image = imagecreatefrompng('images/black.png');
 			;
 			$text = $interval->format(	'%a : %H : %I : %S');
 			imagettftext ($image , $font['size'] , $font['angle'] , $font['x-offset'] , $font['y-offset'] , $font['color'] , $font['file'], $text );
